@@ -1,0 +1,64 @@
+@prefix ids: <https://w3id.org/idsa/core/> .
+@prefix idsc: <https://w3id.org/idsa/code/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix mdeprops: <https://www.mde.com/customproperties/> .
+@prefix dqv:      <http://www.w3.org/ns/dqv#> .
+
+@prefix conn2: <https://aastat.gov.de/connector/conn2/> .
+@prefix data2: <https://aastat.gov.de/connector/conn2/data2/> .
+@prefix part1: <https://im.internationaldataspaces.org/participant/part1> .
+
+data2:
+    a ids:TextResource ;
+    ids:title "Data about the lebanese economy"@en ;
+    ids:description "This dataset describes the lebanese economy between the years 1990 and 2005."@en;
+    ids:keyword "Beirut" ;
+    ids:temporalCoverage [
+        a ids:Interval ;
+        ids:begin [
+            a ids:Instant ;
+            ids:dateTime "1990-02-15T00:00:00.000+02:00"^^xsd:dateTimeStamp ;
+        ];
+        ids:end   [
+            a ids:Instant ;
+            ids:dateTime "2005-05-15T00:00:00.000+02:00"^^xsd:dateTimeStamp ;
+        ] ;
+    ] ;
+    ids:language idsc:EN ;
+    ids:representation [
+        a ids:TextRepresentation ;
+        ids:mediaType <https://www.iana.org/assignments/media-types/text/csv> ;
+        ids:instance data2:activity_csv ;
+    ] ;
+	
+	dqv:hasQualityMeasurement  [ dqv:isMeasurementOf  mdeprops:qualityScore ;
+                                     dqv:value            "1.0"
+                                   ] ;
+        dqv:hasQualityMeasurement  [ dqv:isMeasurementOf  mdeprops:percentMissing ;
+                                     dqv:value            "0.0"
+                                   ] ;
+        dqv:hasQualityMeasurement  [ dqv:isMeasurementOf  mdeprops:dataquality ;
+                                     dqv:value            "good"
+                                   ] ;
+        dqv:hasQualityMeasurement  [ dqv:isMeasurementOf  mdeprops:percentNA ;
+                                     dqv:value            "0.0"
+                                   ] ;
+	
+    
+
+    ids:resourceEndpoint [
+        a ids:ConnectorEndpoint ;
+        ids:endpointArtifact data2:activity_csv ;
+        ids:accessURL <https://tmpfiles.org/dl/62995/lebanon_economy.csv> ;
+    ] ;
+	.
+    
+
+data2:activity_csv
+    a ids:Artifact ;
+    ids:byteSize "492817"^^xsd:integer ;
+    ids:fileName "lebanon_economy.csv" ;
+    ids:creationDate "2021-06-15T12:00:00.000+02:00"^^xsd:dateTimeStamp ;
+    .

@@ -1,0 +1,18 @@
+.app-container {
+  background-color: #eeeeee;
+}
+
+.app {
+  font-family: sans-serif;
+  margin: 0 auto;
+  width: 70%;
+  padding-bottom: 40px;
+}
+
+p {
+  margin: 0;
+}
+
+.route-link {
+  text-decoration: none;
+}

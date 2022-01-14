@@ -1,0 +1,33 @@
+.upload-page-container {
+  padding-top: 40px;
+}
+
+.text-area-container {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+}
+
+.text-area {
+  margin-top: 8px;
+  height: 64px;
+}
+
+.upload-submit-btn-container {
+  display: flex;
+  padding-top: 48px;
+}
+
+.upload-submit-btn {
+  border-radius: 4px;
+  padding: 0 32px;
+  margin: 0 auto;
+  font-size: 24px;
+  border-width: 0;
+  height: 56px;
+  cursor: pointer;
+  width: 240px;
+  background-color: #087ac2;
+  color: #ffffff;
+  border-color: #087ac2;
+}

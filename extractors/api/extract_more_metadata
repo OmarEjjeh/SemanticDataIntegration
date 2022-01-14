@@ -1,0 +1,26 @@
+import tika
+from tika import parser
+import os
+import datetime
+
+tika.initVM()
+
+input_file = 'google_activity_by_London_Borough.csv'
+parsed = parser.from_file(input_file)
+
+metadata = parsed["metadata"]
+filename = metadata['resourceName']
+filetype = metadata['Content-Type'].split(';')[0]
+
+if 'Creation-Date' in metadata:
+    creation_date = metadata['Creation-Date']
+else:
+    creation_date = datetime.datetime.today().isoformat()
+    
+print(f'filetype: {filetype}')
+print(f'filename: {filename}')
+print(f'filesize: {os.stat(input_file).st_size} bytes')
+print(f'Creatation date: {creation_date}')
+
+
+

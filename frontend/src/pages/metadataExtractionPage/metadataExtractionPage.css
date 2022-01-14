@@ -1,0 +1,5 @@
+.filters-row {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+}
